@@ -1,75 +1,150 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>MachinaSynthLabs</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MachinaSynthLabs - UNEFA</title>
+  <link href="./assets/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <style>
+    .unefa-primary-bg {
+      background-color: #002147;
+    }
+    .unefa-secondary-bg {
+      background-color: #C8102E;
+    }
+    .unefa-accent-text {
+      color: #FFC72C;
+    }
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 2rem 0;
+      border-bottom: 4px solid #C8102E;
+    }
+    .btn-unefa {
+      background-color: #C8102E;
+      color: white;
+      border: none;
+      transition: all 0.3s ease;
+    }
+    .btn-unefa:hover {
+      background-color: #A00D26;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .btn-outline-unefa {
+      border: 2px solid white;
+      color: white;
+      transition: all 0.3s ease;
+    }
+    .btn-outline-unefa:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+    .feature-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.15);
+    }
+    .feature-icon {
+      color: #FFC72C;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    @media (max-width: 992px) {
+      .right-section {
+        margin-top: 3rem;
+      }
+    }
+  </style>
 </head>
-<body>
-  <div class="min-h-screen flex items-center justify-center p-4">
-    <div class="w-full max-w-md">
-      <!-- Card -->
-      <div class="bg-white rounded-lg shadow-lg overflow-hidden border-t-4 border-yellow-400">
-        <!-- Encabezado UNEFA -->
-        <div class="bg-blue-900 px-6 py-4">
-          <div class="flex items-center justify-center space-x-2">
-            <div class="h-10 w-10 bg-yellow-400 rounded-full flex items-center justify-center text-blue-900 font-bold">U</div>
-            <div>
-              <h1 class="text-xl font-bold text-white">UNEFA</h1>
-              <p class="text-yellow-400 text-sm">MachinaSynthLab</p>
+<body class="unefa-primary-bg text-white">
+
+  <!-- Jumbotron/Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Sección izquierda (texto) -->
+        <div class="col-lg-6">
+          <div class="d-flex align-items-center mb-4">
+            <div class="unefa-secondary-bg rounded-circle d-flex align-items-center justify-content-center fw-bold me-3" 
+                 style="width: 50px; height: 50px;">
+              <span>U</span>
             </div>
+            <h2 class="mb-0">UNEFA - Extensión Zaraza</h2>
+          </div>
+          
+          <h1 class="display-3 fw-bold mb-4">Machina<span class="unefa-accent-text">Synth</span>Labs</h1>
+          
+          <p class="mb-5">Optimiza tus practicas de laboratorio con esta colección de herramientas virtuales diseñadas para complementar tu formación profesional.</p>
+          
+          <div class="d-flex gap-3">
+            <a href="./src/components/login.html" class="btn btn-unefa btn-lg px-4">Empezar</a>
+            <a href="./src/components/register.html" class="btn btn-outline-unefa btn-lg px-4">Registrarse</a>
           </div>
         </div>
         
-        <!-- Formulario -->
-        <form class="px-8 py-6">
-          <!-- Campo Email -->
-          <div class="mb-4">
-            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo institucional</label>
-            <input 
-              type="email" 
-              id="email" 
-              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition"
-              placeholder="usuario@unefa.edu.ve"
-              required
-            >
+        <!-- Sección derecha (contenido adicional) -->
+        <div class="col-lg-6 right-section ">
+          <div class="row g-4">
+            <!-- Tarjeta 1 -->
+            <div class="col-md-6">
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="bi bi-cpu"></i>
+                </div>
+                <h3 class="h4">Simuladores Virtuales</h3>
+                <p>Accede a laboratorios virtuales para prácticas de redes, bases de datos y programación.</p>
+              </div>
+            </div>
+            
+            <!-- Tarjeta 2 -->
+            <div class="col-md-6">
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="bi bi-journal-bookmark"></i>
+                </div>
+                <h3 class="h4">Guías Didácticas</h3>
+                <p>Documentación completa con instrucciones paso a paso para cada simulación disponible.</p>
+              </div>
+            </div>
+            
+            <!-- Tarjeta 3 (reemplaza la de seguimiento) -->
+            <div class="col-md-6">
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="bi bi-code-square"></i>
+                </div>
+                <h3 class="h4">Entornos de Práctica</h3>
+                <p>Espacios virtuales para desarrollar tus proyectos.</p>
+              </div>
+            </div>
+            
+            <!-- Tarjeta 4 -->
+            <div class="col-md-6">
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="bi bi-people"></i>
+                </div>
+                <h3 class="h4">Trabajo Colaborativo</h3>
+                <p>Herramientas para trabajar en equipo con compañeros y profesores.</p>
+              </div>
+            </div>
           </div>
-          
-          <!-- Campo Contraseña -->
-          <div class="mb-6">
-            <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Contraseña</label>
-            <input 
-              type="password" 
-              id="password" 
-              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition"
-              placeholder="••••••••"
-              required
-            >
-          </div>
-          
-          <!-- Botón con colores UNEFA -->
-          <button 
-            type="submit" 
-            class="w-full bg-blue-900 hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 transition shadow-md"
-          >
-            Acceder al sistema
-          </button>
-          
-          <!-- Enlaces -->
-          <div class="mt-4 text-center text-sm space-y-2">
-            <a href="#" class="text-blue-900 hover:underline block">¿Olvidaste tu contraseña?</a>
-            <a href="#" class="text-gray-500 hover:text-blue-900 text-xs block">Soporte técnico</a>
-          </div>
-        </form>
-      </div>
-      
-      <!-- Footer -->
-      <div class="mt-6 text-center text-xs text-blue-900">
-        <p>Universidad Nacional Experimental Politécnica de la Fuerza Armada</p>
-        <p class="text-gray-500">Extensión Zaraza - Ingeniería de Sistemas</p>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
