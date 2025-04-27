@@ -5,66 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MachinaSynthLabs - UNEFA</title>
   <link href="./assets/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/home-cards.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-  <style>
-    .unefa-primary-bg {
-      background-color: #002147;
-    }
-    .unefa-secondary-bg {
-      background-color: #C8102E;
-    }
-    .unefa-accent-text {
-      color: #FFC72C;
-    }
-    .hero-section {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 2rem 0;
-      border-bottom: 4px solid #C8102E;
-    }
-    .btn-unefa {
-      background-color: #C8102E;
-      color: white;
-      border: none;
-      transition: all 0.3s ease;
-    }
-    .btn-unefa:hover {
-      background-color: #A00D26;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-    .btn-outline-unefa {
-      border: 2px solid white;
-      color: white;
-      transition: all 0.3s ease;
-    }
-    .btn-outline-unefa:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-      transform: translateY(-2px);
-    }
-    .feature-card {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      padding: 1.5rem;
-      transition: all 0.3s ease;
-      height: 100%;
-    }
-    .feature-card:hover {
-      transform: translateY(-5px);
-      background: rgba(255, 255, 255, 0.15);
-    }
-    .feature-icon {
-      color: #FFC72C;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    @media (max-width: 992px) {
-      .right-section {
-        margin-top: 3rem;
-      }
-    }
-  </style>
 </head>
 <body class="unefa-primary-bg text-white">
 
@@ -75,9 +17,8 @@
         <!-- Sección izquierda (texto) -->
         <div class="col-lg-6">
           <div class="d-flex align-items-center mb-4">
-            <div class="unefa-secondary-bg rounded-circle d-flex align-items-center justify-content-center fw-bold me-3" 
-                 style="width: 50px; height: 50px;">
-              <span>U</span>
+            <div>
+                <img class="me-3" src="./assets/images/logo.png" alt="logo" width="70" height="100">
             </div>
             <h2 class="mb-0">UNEFA - Extensión Zaraza</h2>
           </div>
@@ -87,8 +28,7 @@
           <p class="mb-5">Optimiza tus practicas de laboratorio con esta colección de herramientas virtuales diseñadas para complementar tu formación profesional.</p>
           
           <div class="d-flex gap-3">
-            <a href="./src/components/login.html" class="btn btn-unefa btn-lg px-4">Empezar</a>
-            <a href="./src/components/register.html" class="btn btn-outline-unefa btn-lg px-4">Registrarse</a>
+            <a href="./src/views/home.html" class="btn btn-unefa btn-lg px-4">Empezar</a>
           </div>
         </div>
         

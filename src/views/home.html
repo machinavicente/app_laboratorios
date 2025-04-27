@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MachinaSynthLabs - UNEFA</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <style>
+    :root {
+      --unefa-blue: #002147;
+      --unefa-red: #C8102E;
+      --unefa-yellow: #FFC72C;
+    }
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .navbar-unefa {
+      background-color: var(--unefa-blue);
+      border-bottom: 4px solid var(--unefa-red);
+    }
+    .search-container {
+      background-color: var(--unefa-blue);
+      padding: 2rem 0;
+      margin-bottom: 2rem;
+    }
+    .search-box {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .search-input {
+      border-radius: 50px;
+      border: none;
+      padding: 12px 25px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .search-btn {
+      background-color: var(--unefa-red);
+      color: white;
+      border-radius: 50px;
+      padding: 12px 25px;
+      border: none;
+      transition: all 0.3s;
+    }
+    .search-btn:hover {
+      background-color: #A00D26;
+      transform: translateY(-2px);
+    }
+    .simulator-card {
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.3s;
+      height: 100%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border: none;
+    }
+    .simulator-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+    .card-img-top {
+      height: 150px;
+      object-fit: cover;
+    }
+    .card-title {
+      color: var(--unefa-blue);
+      font-weight: 600;
+    }
+    .card-footer {
+      background-color: white;
+      border-top: none;
+    }
+    .btn-simulator {
+      background-color: var(--unefa-red);
+      color: white;
+      border-radius: 50px;
+      padding: 8px 20px;
+      font-size: 0.9rem;
+    }
+    .btn-simulator:hover {
+      background-color: #A00D26;
+      color: white;
+    }
+    .category-badge {
+      background-color: var(--unefa-yellow);
+      color: var(--unefa-blue);
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 0.8rem;
+    }
+    .section-title {
+      color: var(--unefa-blue);
+      position: relative;
+      padding-bottom: 10px;
+      margin-bottom: 2rem;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 60px;
+      height: 3px;
+      background-color: var(--unefa-red);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-unefa">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <div class="rounded-circle bg-white d-flex align-items-center justify-content-center me-2" 
+             style="width: 40px; height: 40px; color: var(--unefa-blue); font-weight: bold;">U</div>
+        <span>MachinaSynthLabs</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Simuladores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Recursos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Barra de búsqueda -->
+  <div class="search-container text-white">
+    <div class="container">
+      <div class="search-box">
+        <h2 class="text-center mb-4">Encuentra el simulador que necesitas</h2>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control search-input" placeholder="Buscar simuladores...">
+          <button class="btn search-btn" type="button">
+            <i class="bi bi-search me-2"></i>Buscar
+          </button>
+        </div>
+        <div class="text-center">
+          <small>Ejemplo: redes, programación, bases de datos</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="container py-5">
+    <!-- Filtros -->
+    <div class="row mb-4">
+      <div class="col-12">
+        <div class="d-flex flex-wrap gap-2">
+          <button class="btn btn-sm btn-outline-secondary active">Todos</button>
+          <button class="btn btn-sm btn-outline-secondary">Redes</button>
+          <button class="btn btn-sm btn-outline-secondary">Programación</button>
+          <button class="btn btn-sm btn-outline-secondary">Bases de Datos</button>
+          <button class="btn btn-sm btn-outline-secondary">Sistemas Operativos</button>
+          <button class="btn btn-sm btn-outline-secondary">Seguridad</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Simuladores destacados -->
+    <h3 class="section-title">Simuladores destacados</h3>
+    <div class="row g-4">
+      <!-- Tarjeta 1 -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card simulator-card">
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Simulador de redes">
+          <div class="card-body">
+            <span class="category-badge mb-2">Redes</span>
+            <h5 class="card-title">Simulador de Topologías</h5>
+            <p class="card-text">Diseña y prueba configuraciones de red con equipos virtuales.</p>
+          </div>
+          <div class="card-footer text-center">
+            <a href="#" class="btn btn-simulator">Abrir</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 2 -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card simulator-card">
+          <img src="https://images.unsplash.com/photo-1617791160536-598cf32026fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Entorno de programación">
+          <div class="card-body">
+            <span class="category-badge mb-2">Programación</span>
+            <h5 class="card-title">Laboratorio Python</h5>
+            <p class="card-text">Entorno virtual para practicar programación en Python.</p>
+          </div>
+          <div class="card-footer text-center">
+            <a href="#" class="btn btn-simulator">Abrir</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 3 -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card simulator-card">
+          <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Base de datos">
+          <div class="card-body">
+            <span class="category-badge mb-2">Bases de Datos</span>
+            <h5 class="card-title">SQL Virtual Lab</h5>
+            <p class="card-text">Practica consultas SQL con bases de datos relacionales.</p>
+          </div>
+          <div class="card-footer text-center">
+            <a href="#" class="btn btn-simulator">Abrir</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 4 -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card simulator-card">
+          <img src="https://images.unsplash.com/photo-1597852074816-d933c7d2b988?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Seguridad informática">
+          <div class="card-body">
+            <span class="category-badge mb-2">Seguridad</span>
+            <h5 class="card-title">Hacking Ético</h5>
+            <p class="card-text">Entorno seguro para aprender técnicas de seguridad.</p>
+          </div>
+          <div class="card-footer text-center">
+            <a href="#" class="btn btn-simulator">Abrir</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Más simuladores -->
+    <h3 class="section-title mt-5">Todos los simuladores</h3>
+    <div class="row g-4">
+      <!-- Tarjeta 5 -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card simulator-card">
+          <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Linux">
+          <div class="card-body">
+            <span class="category-badge mb-2">Sistemas Operativos</span>
+            <h5 class="card-title">Terminal Linux</h5>
+            <p class="card-text">Practica comandos de Linux en un entorno virtual.</p>
+          </div>
+          <div class="card-footer text-center">
+            <a href="#" class="btn btn-simulator">Abrir</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 6 -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card simulator-card">
+          <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Algoritmos">
+          <div class="card-body">
+            <span class="category-badge mb-2">Programación</span>
+            <h5 class="card-title">Visualizador de Algoritmos</h5>
+            <p class="card-text">Visualiza cómo funcionan los algoritmos paso a paso.</p>
+          </div>
+          <div class="card-footer text-center">
+            <a href="#" class="btn btn-simulator">Abrir</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 7 -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card simulator-card">
+          <img src="https://images.unsplash.com/photo-1624953587687-daf255b6b80a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Cisco">
+          <div class="card-body">
+            <span class="category-badge mb-2">Redes</span>
+            <h5 class="card-title">Cisco Packet Tracer</h5>
+            <p class="card-text">Simulador de redes con equipos Cisco.</p>
+          </div>
+          <div class="card-footer text-center">
+            <a href="#" class="btn btn-simulator">Abrir</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 8 -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card simulator-card">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Machine Learning">
+          <div class="card-body">
+            <span class="category-badge mb-2">Inteligencia Artificial</span>
+            <h5 class="card-title">ML Sandbox</h5>
+            <p class="card-text">Laboratorio para experimentar con machine learning.</p>
+          </div>
+          <div class="card-footer text-center">
+            <a href="#" class="btn btn-simulator">Abrir</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
