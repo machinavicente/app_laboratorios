@@ -28,9 +28,28 @@
       <div class="search-box">
         <h2 class="text-center mb-4">Encuentra el simulador que necesitas</h2>
         <div class="input-group mb-3">
-          <input type="text" class="form-control search-input" placeholder="Buscar simuladores...">
+          <input type="text" class="form-control search-input" placeholder="Buscar simuladores..." id="search_bar">
+          <script>
+            document.addEventListener('DOMContentLoaded', (event) => {
+              const searchBar = document.getElementById('search_bar');
+              if (searchBar !== null) {
+                searchBar.addEventListener('input', (e) => {
+                  const searchTerm = e.target.value.toLowerCase(); // Convertir a minúsculas
+                  document.querySelectorAll('.card').forEach((item) => {
+                    const itemText = item.textContent.toLowerCase(); // También convertir a minúsculas
+                    if (itemText.includes(searchTerm)) {
+                      item.style.display = 'block'; // Muestra el elemento
+                    } else {
+                      item.style.display = 'none'; // Oculta el elemento
+                    }
+                  });
+                });
+              }
+            });
+          </script>
+
           <button class="btn search-btn" type="button">
-            <i class="bi bi-search me-2"></i>Buscar
+            <i class="bi bi-search me-2"></i>
           </button>
         </div>
         <div class="text-center">
@@ -43,7 +62,7 @@
   <!-- Contenido principal -->
   <div class="container py-5">
     <!-- Simuladores destacados -->
-    <h3 class="section-title">Programacion...</h3>
+    <h3 class="section-title">Programacion</h3>
     <div class="row g-4">
       <!-- Tarjeta 1 -->
       <div class="col-md-4 col-lg-3">
@@ -60,6 +79,7 @@
           </div>
         </div>
       </div>
+
       <div class="col-md-4 col-lg-3">
         <div class="card simulator-card">
           <img src="https://programacion.net/files/article/article_03354_pascal-pasc2318.jpg" class="card-img-top" alt="Simulador de Pascal">
@@ -75,9 +95,70 @@
         </div>
       </div>
     </div>
-    <!-- Más simuladores -->
-    <h3 class="section-title mt-5">Todos los simuladores</h3>
+    <!-- Bases de Datos -->
+    <h3 class="section-title mt-5">Bases de Datos</h3>
     <div class="row g-4">
+      <div class="col-md-4 col-lg-3">
+        <div class="card simulator-card">
+          <img src="https://i.pinimg.com/736x/72/81/f4/7281f4ba7567c6e3366c3d86c1948349.jpg" class="card-img-top" alt="Simulador de Sql" >
+          <div class="card-body">
+            <span class="category-badge mb-3">Sql</span>
+            <hr>
+            <h5 class="card-title">SQL Online</h5>
+            <p class="card-text"></p>
+          </div>
+          <div class="card-footer">
+            <a href="https://sqliteonline.com/" target="_blank" class="btn btn-simulator">Ejecutar</a>
+          </div>
+        </div>  
+      </div>
+
+      <div class="col-md-4 col-lg-3">
+        <div class="card simulator-card">
+          <img src="https://i.pinimg.com/736x/a6/6d/52/a66d52b957daaf2413ff36a4cccf4b7f.jpg" class="card-img-top" alt="Simulador de Sql" >
+          <div class="card-body">
+            <span class="category-badge mb-3">Sql</span>
+            <hr>
+            <h5 class="card-title">Programiz - Online SQL Editor</h5>
+            <p class="card-text"></p>
+          </div>
+          <div class="card-footer">
+            <a href="https://www.programiz.com/sql/online-compiler" target="_blank" class="btn btn-simulator">Ejecutar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-lg-3">
+        <div class="card simulator-card">
+          <img src="https://i.pinimg.com/736x/bc/1b/7e/bc1b7ea5fc993dd0f436133e640ece74.jpg" class="card-img-top" alt="Simulador de Sql" >
+          <div class="card-body">
+            <span class="category-badge mb-3">Sql</span>
+            <hr>
+            <h5 class="card-title">Online MySQL</h5>
+            <p class="card-text"></p>
+          </div>
+          <div class="card-footer">
+            <a href="https://onecompiler.com/mysql" target="_blank" class="btn btn-simulator">Ejecutar</a>
+          </div>
+        </div>
+      </div>
+      <!-- Procesamiento de Datos -->
+      <h3 class="section-title mt-5">Procesamiento de Datos</h3>
+      <div class="row g-4">
+        <div class="col-md-4 col-lg-3">
+          <div class="card simulator-card">
+            <img src="https://i.pinimg.com/736x/4f/29/b0/4f29b0ed30ec52569f2a19814710e433.jpg" class="card-img-top" alt="Diagramas" >
+            <div class="card-body">
+              <span class="category-badge mb-3">Diagramas</span>
+              <hr>
+              <h5 class="card-title">Diagramador Online</h5>
+              <p class="card-text"></p>
+            </div>
+            <div class="card-footer">
+              <a href="https://online.visual-paradigm.com/app/diagrams/#diagram:proj=0&type=Flowchart&width=11&height=8.5&unit=inch" target="_blank" class="btn btn-simulator">Ejecutar</a>
+            </div>
+          </div>  
+        </div>
       
     </div>
   </div>
